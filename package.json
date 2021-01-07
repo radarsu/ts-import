@@ -1,0 +1,35 @@
+{
+    "name": "ts-import",
+    "version": "2.0.24",
+    "description": "Import (compile and cache on the fly) TypeScript files dynamically with ease.",
+    "keywords": [
+        "compile",
+        "dynamic",
+        "import",
+        "require",
+        "typescript"
+    ],
+    "files": [
+        "dist"
+    ],
+    "author": "Artur Kurowski <radarsu@gmail.com>",
+    "homepage": "https://github.com/radarsu/ts-import#readme",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "dependencies": {
+        "options-defaults": "^2.0.24"
+    },
+    "devDependencies": {
+        "@radrat-node/logger": "^2.0.24",
+        "@types/jest": "^26.0.16",
+        "@types/node": "^14.11.1",
+        "jest": "^26.4.2",
+        "jest-cli": "^26.6.3",
+        "ts-jest": "^26.3.0",
+        "typescript": "^4.0.2"
+    },
+    "engines": {
+        "node": ">=14.14.0"
+    },
+    "gitHead": "3c55f8f89402a57c1c859a80f76244d7dce1b292"
+}
