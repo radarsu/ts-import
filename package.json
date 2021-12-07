@@ -17,10 +17,10 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "dependencies": {
-        "options-defaults": "^2.0.24"
+        "options-defaults": "^2.0.24",
+        "@radrat-node/logger": "^2.0.24"
     },
     "devDependencies": {
-        "@radrat-node/logger": "^2.0.24",
         "@types/jest": "^26.0.16",
         "@types/node": "^14.11.1",
         "jest": "^26.4.2",
