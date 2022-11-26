@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "emitDecoratorMetadata": true,
+        "exactOptionalPropertyTypes": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "incremental": true,
+        "module": "commonjs",
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noUncheckedIndexedAccess": true,
+        "outDir": "./dist",
+        "removeComments": true,
+        "sourceMap": true,
+        "strict": true,
+        "target": "es2017"
+    },
+    "exclude": ["./dist", "./node_modules", "rr-scripts.ts", "./__tests__", "./__tests-utils__", "**/*.spec.ts"]
+}

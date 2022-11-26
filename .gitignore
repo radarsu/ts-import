@@ -1,0 +1,15 @@
+# Dependencies.
+/node_modules
+/npm-debug.log
+
+# Distributables.
+/dist
+/dist-*
+
+# Operating systems.
+.DS_Store
+Thumbs.db
+/tsconfig.tsbuildinfo
+
+# Custom.
+/cache
