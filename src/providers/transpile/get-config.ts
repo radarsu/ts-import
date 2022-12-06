@@ -1,4 +1,4 @@
-import * as path from 'path';
+import * as path from 'node:path';
 
 import { LoadTranspileOptions } from '../../load.interfaces';
 import { defaults } from 'options-defaults';

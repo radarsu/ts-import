@@ -1,7 +1,7 @@
 import * as commentParser from './modules/comment-parser';
 import * as crossPlatform from './modules/cross-platform';
-import * as fs from 'fs';
-import * as path from 'path';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 import * as utils from './utils';
 
 import { LoadMode, LoadOptions } from './load.interfaces';

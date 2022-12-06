@@ -1,4 +1,4 @@
-import * as path from 'path';
+import * as path from 'node:path';
 import * as tsc from 'typescript';
 
 import { LoadCompileOptions } from '../../load.interfaces';

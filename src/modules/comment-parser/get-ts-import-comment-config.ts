@@ -1,5 +1,5 @@
 import * as commentParser from 'comment-parser';
-import * as fs from 'fs';
+import * as fs from 'node:fs';
 
 export const getTsImportCommentConfig = async (tsRelativePath: string) => {
     const tsContent = await fs.promises.readFile(tsRelativePath, `utf-8`);
