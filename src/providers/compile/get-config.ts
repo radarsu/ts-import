@@ -1,3 +1,4 @@
+import * as os from 'node:os';
 import * as path from 'node:path';
 import * as tsc from 'typescript';
 
@@ -6,12 +7,11 @@ import { defaults } from 'options-defaults';
 
 const getDefaultCompilerOptions = () => {
     const defaultsForPlatform: tsc.CompilerOptions & { outDir: string } = {
-        outDir: path.resolve(__dirname, `..`, `..`, `..`, `cache`),
+        outDir: path.join(os.tmpdir(), `ts-import/cache`),
     };
 
     if (process.platform === `win32`) {
         const driveLetter = process.cwd().charAt(0);
-        defaultsForPlatform.outDir = path.join(defaultsForPlatform.outDir, driveLetter);
         defaultsForPlatform.rootDir = `${driveLetter}:/`;
     } else {
         defaultsForPlatform.rootDir = `/`;
