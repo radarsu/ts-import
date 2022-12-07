@@ -14,6 +14,7 @@ export interface LoadTranspileOptions {
     allowConfigurationWithComments?: boolean;
     useCache?: boolean;
     transpileOptions: {
+        esm: boolean,
         cache: {
             dir: string;
             // invalidateOnChanges: boolean;
@@ -27,6 +28,7 @@ export interface LoadCompileOptions {
     allowConfigurationWithComments?: boolean;
     useCache?: boolean;
     compileOptions: {
+        esm: boolean,
         // cache: {
         //     invalidateOnChanges: boolean;
         // };

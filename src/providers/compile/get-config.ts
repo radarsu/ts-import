@@ -22,6 +22,7 @@ const getDefaultCompilerOptions = () => {
 
 export const getConfig = (options: LoadCompileOptions) => {
     const defaultCompileOptions: LoadCompileOptions['compileOptions'] & { compilerOptions: { outDir: string } } = {
+        esm: false,
         // invalidateOnChanges: boolean;
         compilerOptions: {
             ...getDefaultCompilerOptions(),

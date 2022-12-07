@@ -30,7 +30,8 @@ export const load = async (tsRelativePath: string, options?: LoadOptions) => {
 
     const tsPath = path.resolve(cwd, tsRelativePath);
     const jsAfterCachePath = crossPlatform.getJsAfterCachePath(tsPath);
-    const jsPath = path.join(cacheDir, jsAfterCachePath).replace(/\.[^/.]+$/u, `.js`);
+    const jsPathExtension = config.esm === true ? `.cjs` : `.js`;
+    const jsPath = path.join(cacheDir, jsAfterCachePath).replace(/\.[^/.]+$/u, jsPathExtension);
 
     if (loadConfig.useCache) {
         const [tsFileExists, jsFileExists] = await Promise.all([
@@ -72,7 +73,8 @@ export const loadSync = (tsRelativePath: string, options?: LoadOptions) => {
     const tsPath = path.resolve(cwd, tsRelativePath);
 
     const jsAfterCachePath = crossPlatform.getJsAfterCachePath(tsPath);
-    const jsPath = path.join(cacheDir, jsAfterCachePath).replace(/\.[^/.]+$/u, `.js`);
+    const jsPathExtension = config.esm === true ? `.cjs` : `.js`;
+    const jsPath = path.join(cacheDir, jsAfterCachePath).replace(/\.[^/.]+$/u, jsPathExtension);
 
     if (loadConfig.useCache) {
         const tsFileExists = utils.checkIfFileExistsSync(tsPath);

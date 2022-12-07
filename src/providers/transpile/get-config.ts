@@ -5,6 +5,7 @@ import { defaults } from 'options-defaults';
 
 export const getConfig = (options: LoadTranspileOptions) => {
     const defaultTranspileOptions: LoadTranspileOptions['transpileOptions'] = {
+        esm: false,
         cache: {
             // invalidateOnChanges: boolean;
             dir: path.resolve(__dirname, `..`, `..`, `..`, `cache`),
