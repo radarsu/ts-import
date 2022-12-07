@@ -1,4 +1,3 @@
-import * as os from 'node:os';
 import * as path from 'node:path';
 
 import { LoadTranspileOptions } from '../../load.interfaces';
@@ -8,7 +7,7 @@ export const getConfig = (options: LoadTranspileOptions) => {
     const defaultTranspileOptions: LoadTranspileOptions['transpileOptions'] = {
         cache: {
             // invalidateOnChanges: boolean;
-            dir: path.join(os.tmpdir(), `ts-import/cache`),
+            dir: path.join(process.cwd(), `.ts-import/cache`),
         },
         transpileOptions: {},
     };
