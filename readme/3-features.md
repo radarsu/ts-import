@@ -1,0 +1,6 @@
+-   **Asynchronous and synchronous version** - uses **import** for async and **require** for sync.
+-   **Caches JavaScript** files into directory inside **node_modules/ts-import/cache** (pretty much like **typescript-require**). Removing node_modules removes cache as well.
+-   **Fast** - I've benchmarked ways to compare detecting file changes with **fs** module and checking mtimeMs turned out to be fastest (https://jsperf.com/fs-stat-mtime-vs-mtimems). Also, compilation in version 3 is approximately 10x faster than in version 2.
+-   **Highly flexible and configurable** - all compilerOptions are available under transpileOptions parameter.
+-   **No interference** - doesn't interfere with native import, require etc. changing their behavior or impacting their performance.
+-   **Only 1 dependency** - uses only 1 tiny package maintained by myself (which has 0 dependencies).
