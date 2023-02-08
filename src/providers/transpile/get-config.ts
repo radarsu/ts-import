@@ -13,11 +13,6 @@ export const getConfig = (options: LoadTranspileOptions) => {
         transpileOptions: {},
     };
 
-    if (process.platform === `win32`) {
-        const driveLetter = cwd.charAt(0);
-        defaultTranspileOptions.cache.dir = path.join(defaultTranspileOptions.cache.dir, driveLetter);
-    }
-
     const transpileOptions = defaults(defaultTranspileOptions, options.transpileOptions);
     return transpileOptions;
 };

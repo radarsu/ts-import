@@ -30,7 +30,7 @@ export const load = async (tsRelativePath: string, options?: LoadOptions) => {
     const cacheDir = provider.getCacheDir(config);
 
     const tsPath = path.resolve(cwd, tsRelativePath);
-    const jsAfterCachePath = crossPlatform.getJsAfterCachePath(tsPath);
+    const jsAfterCachePath = crossPlatform.getJsAfterCachePath(tsPath, cwd);
     const jsPath = path.join(cacheDir, jsAfterCachePath).replace(/\.[^/.]+$/u, loadConfig.compiledJsExtension);
 
     if (loadConfig.useCache) {
@@ -72,7 +72,7 @@ export const loadSync = (tsRelativePath: string, options?: LoadOptions) => {
     const cacheDir = provider.getCacheDir(config);
     const tsPath = path.resolve(cwd, tsRelativePath);
 
-    const jsAfterCachePath = crossPlatform.getJsAfterCachePath(tsPath);
+    const jsAfterCachePath = crossPlatform.getJsAfterCachePath(tsPath, cwd);
     const jsPath = path.join(cacheDir, jsAfterCachePath).replace(/\.[^/.]+$/u, loadConfig.compiledJsExtension);
 
     if (loadConfig.useCache) {

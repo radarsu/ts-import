@@ -11,9 +11,7 @@ const getDefaultCompilerOptions = () => {
     };
 
     if (process.platform === `win32`) {
-        const driveLetter = cwd.charAt(0);
-        defaultsForPlatform.outDir = path.join(defaultsForPlatform.outDir, driveLetter);
-        defaultsForPlatform.rootDir = `${driveLetter}:/`;
+        defaultsForPlatform.rootDir = cwd;
     } else {
         defaultsForPlatform.rootDir = `/`;
     }
