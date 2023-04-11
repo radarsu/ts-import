@@ -1,0 +1,50 @@
+{
+    "name": "ts-import",
+    "version": "5.0.0-beta.0",
+    "description": "Import (compile and cache on the fly) TypeScript files dynamically with ease.",
+    "license": "MIT",
+    "keywords": [
+        "compile",
+        "dynamic",
+        "import",
+        "require",
+        "typescript"
+    ],
+    "files": [
+        "dist"
+    ],
+    "author": "Artur Kurowski <radarsu@gmail.com>",
+    "homepage": "https://github.com/radarsu/ts-import#readme",
+    "main": "dist/main.js",
+    "types": "dist/main.d.ts",
+    "type": "module",
+    "dependencies": {
+        "comment-parser": "1.3.1",
+        "options-defaults": "workspace:2.0.40",
+        "tslib": "2.5.0"
+    },
+    "devDependencies": {
+        "@radrat/cli": "3.0.0-beta.9",
+        "@types/node": "18.15.11",
+        "ava": "5.2.0",
+        "typescript": "5.0.4"
+    },
+    "peerDependencies": {
+        "typescript": "5"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "ava": {
+        "extensions": {
+            "ts": "module"
+        },
+        "files": [
+            "tests/**/*",
+            "!tests/assets"
+        ],
+        "nodeArguments": [
+            "--loader=ts-node/esm"
+        ]
+    }
+}
