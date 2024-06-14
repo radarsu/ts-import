@@ -1,6 +1,7 @@
 import * as commentParser from './modules/comment-parser/index.js';
 import * as crossPlatform from './modules/cross-platform/index.js';
 import * as path from 'node:path';
+import * as url from 'node:url';
 import * as utils from './utils/index.js';
 
 import { LoadMode, LoadOptions } from './load.interfaces.js';
@@ -42,7 +43,7 @@ export const load = async (tsRelativePath: string, options?: LoadOptions) => {
 
         // Load from cache.
         if (jsFileExists && !utils.isFileNewer(tsFileExists, jsFileExists)) {
-            const loaded = await import(jsPath);
+            const loaded = await import(url.pathToFileURL(jsPath));
             return loaded;
         }
     }
@@ -53,7 +54,7 @@ export const load = async (tsRelativePath: string, options?: LoadOptions) => {
         ...config,
     });
 
-    const loaded = await import(jsPath);
+    const loaded = await import(url.pathToFileURL(jsPath));
     return loaded;
 };
 
